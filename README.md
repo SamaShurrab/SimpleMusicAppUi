@@ -49,7 +49,7 @@ The purpose of this project is to practice and understand the usage of **basic F
 
 ## 🎥 Application Demo
 
-🎬 https://www.youtube.com/watch?v=STv2Aqc6vsU
+🎬 https://youtu.be/ThWdYKO3GO0
 
 ---
 
