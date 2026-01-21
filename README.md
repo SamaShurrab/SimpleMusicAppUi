@@ -42,22 +42,15 @@ The purpose of this project is to practice and understand the usage of **basic F
 
 ---
 
-### App Launcher Icon
-(assets/images/logo.png)
-
----
-
 ## 🎥 Application Demo
 
 🎬 https://youtu.be/ThWdYKO3GO0
 
 ---
 
-## 📷 Screenshots
+## 📷 App Screens
 
-|Screen 1 | Screen 2 |
-| --- | --- |
-| ![ Screen 1](assets/images/screen1.png) | ![ Screen 2](assets/images/screen2.png) |
+(assets/images/screens.png) 
 
 ## 📌 Project Structure
 
