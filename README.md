@@ -50,7 +50,9 @@ The purpose of this project is to practice and understand the usage of **basic F
 
 ## 📷 App Screens
 
-(assets/images/screens.png) 
+![Project Images](assets/images/screens.png) 
+
+---
 
 ## 📌 Project Structure
 
@@ -78,12 +80,9 @@ MUSIC_APP_UI-MAIN/
 
 ----
 
-## 👤 Author
+## 📦 APK Download
 
-Sama Shurrab
+Download the latest version of **Music App Ui** from GitHub Releases:
 
-----
+👉 [Download Latest APK](https://github.com/SamaShurrab/SimpleMusicAppUi/releases/latest)
 
-## 📜 License
-
-Open-source

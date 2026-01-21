@@ -35,79 +35,81 @@ class MusicListPageState extends State<MusicListPage> {
       {"musicName": "Say it", "musicSinger": "Flume", "isOpen": false},
     ];
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CustomCirucalrWidget(
-                  isOpen: false,
-                  height: Dimensions.heightWidthIcon,
-                  radius: Dimensions.raduis,
-                  width: Dimensions.heightWidthIcon,
-                  color: AppColors.primaryColor,
-                  widget: Icon(Icons.save, color: AppColors.secondaryColor),
-                ),
-                CustomCirucalrWidget(
-                  isOpen: false,
-                  height: Dimensions.heightWidthImage,
-                  radius: Dimensions.raduis,
-                  width: Dimensions.heightWidthImage,
-                  color: Colors.transparent,
-                  widget: ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                      Dimensions.radiusClipRRect,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomCirucalrWidget(
+                    isOpen: false,
+                    height: Dimensions.heightWidthIcon,
+                    radius: Dimensions.raduis,
+                    width: Dimensions.heightWidthIcon,
+                    color: AppColors.primaryColor,
+                    widget: Icon(Icons.save, color: AppColors.secondaryColor),
+                  ),
+                  CustomCirucalrWidget(
+                    isOpen: false,
+                    height: Dimensions.heightWidthImage,
+                    radius: Dimensions.raduis,
+                    width: Dimensions.heightWidthImage,
+                    color: Colors.transparent,
+                    widget: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        Dimensions.radiusClipRRect,
+                      ),
+                      child: Image.asset(Paths.imagePath, fit: BoxFit.contain),
                     ),
-                    child: Image.asset(Paths.imagePath, fit: BoxFit.contain),
                   ),
-                ),
-                CustomCirucalrWidget(
-                  isOpen: false,
-                  height: Dimensions.heightWidthIcon,
-                  radius: Dimensions.raduis,
-                  width: Dimensions.heightWidthIcon,
-                  color: AppColors.primaryColor,
-                  widget: Icon(
-                    Icons.more_horiz,
-                    color: AppColors.secondaryColor,
+                  CustomCirucalrWidget(
+                    isOpen: false,
+                    height: Dimensions.heightWidthIcon,
+                    radius: Dimensions.raduis,
+                    width: Dimensions.heightWidthIcon,
+                    color: AppColors.primaryColor,
+                    widget: Icon(
+                      Icons.more_horiz,
+                      color: AppColors.secondaryColor,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: MediaQuery.sizeOf(context).height * .05),
-            ...List.generate(music.length, (index) {
-              return InkWell(
-                hoverColor: Colors.grey,
-                borderRadius: BorderRadius.circular(15),
+                ],
+              ),
+              SizedBox(height: MediaQuery.sizeOf(context).height * .05),
+              ...List.generate(music.length, (index) {
+                return InkWell(
+                  hoverColor: Colors.grey,
+                  borderRadius: BorderRadius.circular(15),
 
-                onTap: music[index]["isOpen"]
-                    ? () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MusicPage(
-                                musicName: music[2]["musicName"],
-                                musicSinger: music[2]["musicSinger"],
-                              );
-                            },
-                          ),
-                        );
-                      }
-                    : null,
-                onHover: music[index]["isOpen"] ? (value) {} : null,
-                child: CustomListTile(
-                  musicName: music[index]["musicName"],
-                  musicSinger: music[index]["musicSinger"],
-                  isOpen: music[index]["isOpen"],
-                ),
-              );
-            }),
-            SizedBox(height: MediaQuery.sizeOf(context).height * .05),
-            Mediacontrolbuttons(),
-          ],
+                  onTap: music[index]["isOpen"]
+                      ? () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return MusicPage(
+                                  musicName: music[2]["musicName"],
+                                  musicSinger: music[2]["musicSinger"],
+                                );
+                              },
+                            ),
+                          );
+                        }
+                      : null,
+                  onHover: music[index]["isOpen"] ? (value) {} : null,
+                  child: CustomListTile(
+                    musicName: music[index]["musicName"],
+                    musicSinger: music[index]["musicSinger"],
+                    isOpen: music[index]["isOpen"],
+                  ),
+                );
+              }),
+              SizedBox(height: MediaQuery.sizeOf(context).height * .05),
+              Mediacontrolbuttons(),
+            ],
+          ),
         ),
       ),
     );
